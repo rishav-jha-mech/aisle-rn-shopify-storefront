@@ -45,7 +45,7 @@ export function ProductGrid({
         ) : undefined
       }
       ListFooterComponent={
-        loadingMore ? <ActivityIndicator style={styles.footer} color={colors.primary} /> : null
+        loadingMore ? <ActivityIndicator style={styles.footer} color={colors.primary} /> : undefined
       }
       renderItem={({ item }) => (
         <View style={styles.cell}>
