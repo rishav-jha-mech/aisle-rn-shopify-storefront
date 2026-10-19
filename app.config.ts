@@ -13,11 +13,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   orientation: 'portrait',
   icon: './assets/icon.png',
   userInterfaceStyle: 'light',
-  splash: {
-    image: './assets/splash-icon.png',
-    resizeMode: 'contain',
-    backgroundColor: merchant.theme.background,
-  },
   ios: {
     supportsTablet: false,
     bundleIdentifier: `dev.storefront.${merchant.bundleSuffix}`,
