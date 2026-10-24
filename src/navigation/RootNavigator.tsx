@@ -4,12 +4,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import type { ComponentProps } from 'react';
 
 import { useCart } from '../hooks/cart';
+import { AccountScreen } from '../screens/AccountScreen';
 import { CartScreen } from '../screens/CartScreen';
 import { CollectionScreen } from '../screens/CollectionScreen';
 import { CollectionsScreen } from '../screens/CollectionsScreen';
 import { HomeScreen } from '../screens/HomeScreen';
+import { LoginScreen } from '../screens/LoginScreen';
+import { OrderDetailScreen } from '../screens/OrderDetailScreen';
 import { ProductScreen } from '../screens/ProductScreen';
 import { SearchScreen } from '../screens/SearchScreen';
+import { SignUpScreen } from '../screens/SignUpScreen';
 import { colors } from '../theme';
 import type { RootStackParamList, TabParamList } from './types';
 
@@ -49,6 +53,7 @@ function Tabs() {
           tabBarBadgeStyle: { backgroundColor: colors.primary, color: colors.onPrimary },
         }}
       />
+      <Tab.Screen name="AccountTab" component={AccountScreen} options={{ title: 'Account' }} />
     </Tab.Navigator>
   );
 }
@@ -68,6 +73,11 @@ export function RootNavigator() {
       <Stack.Screen name="Collections" component={CollectionsScreen} />
       <Stack.Screen name="Collection" component={CollectionScreen} />
       <Stack.Screen name="Product" component={ProductScreen} />
+      <Stack.Screen name="OrderDetail" component={OrderDetailScreen} />
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Sign in' }} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ title: 'Sign up' }} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
