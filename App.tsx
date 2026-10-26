@@ -7,6 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { CheckoutListener } from './src/CheckoutListener';
 import { LoadingState } from './src/components/States';
+import { linking } from './src/navigation/linking';
 import { RootNavigator } from './src/navigation/RootNavigator';
 import { useCartStore } from './src/state/cart';
 import { useSession } from './src/state/session';
@@ -59,7 +60,7 @@ export default function App() {
           <CheckoutListener />
           <StatusBar style="dark" />
           {cartHydrated && sessionHydrated ? (
-            <NavigationContainer theme={navigationTheme} fallback={<LoadingState />}>
+            <NavigationContainer linking={linking} theme={navigationTheme} fallback={<LoadingState />}>
               <RootNavigator />
             </NavigationContainer>
           ) : (
