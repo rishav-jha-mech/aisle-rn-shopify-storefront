@@ -1,14 +1,15 @@
 import type { MerchantConfig } from './types.ts';
 
-// Shopify's public demo store. No token needed, so the app runs out of the box.
+// Aisle's default build, backed by Shopify's public demo store (mock.shop).
+// No token needed, so the app runs out of the box.
 const mockShop: MerchantConfig = {
   id: 'mock-shop',
-  appName: 'Mock Shop',
-  tagline: 'Everyday essentials',
+  appName: 'Aisle',
+  tagline: 'Everyday essentials, one tap away',
   storeDomain: 'mock.shop',
   storefrontToken: '',
   apiVersion: '2025-01',
-  bundleSuffix: 'mockshop',
+  bundleSuffix: 'demo',
   supportsCustomerAccounts: false,
   theme: {
     primary: '#111111',

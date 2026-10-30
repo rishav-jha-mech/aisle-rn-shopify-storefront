@@ -18,7 +18,7 @@ export type MerchantConfig = {
   storeDomain: string;
   storefrontToken: string;
   apiVersion: string;
-  /** Native bundle / package id suffix, so two merchants can live on one device. */
+  /** Bundle / package id suffix (app.aisle.<suffix>), so two merchants can live on one device. */
   bundleSuffix: string;
   supportsCustomerAccounts: boolean;
   theme: MerchantTheme;

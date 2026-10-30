@@ -3,12 +3,12 @@ import type { MerchantConfig } from './types.ts';
 // A Shopify dev store from a Partner account. Fill these in through .env.
 const devStore: MerchantConfig = {
   id: 'dev-store',
-  appName: 'Aisle',
-  tagline: 'Goods for slow mornings',
+  appName: process.env.EXPO_PUBLIC_DEV_STORE_NAME ?? 'My Store',
+  tagline: process.env.EXPO_PUBLIC_DEV_STORE_TAGLINE ?? 'Powered by Aisle',
   storeDomain: process.env.EXPO_PUBLIC_DEV_STORE_DOMAIN ?? 'your-store.myshopify.com',
   storefrontToken: process.env.EXPO_PUBLIC_DEV_STORE_TOKEN ?? '',
   apiVersion: '2025-01',
-  bundleSuffix: 'aisle',
+  bundleSuffix: 'devstore',
   supportsCustomerAccounts: true,
   theme: {
     primary: '#1F5C4A',

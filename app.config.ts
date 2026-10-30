@@ -7,7 +7,7 @@ const merchant = getMerchant();
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: merchant.appName,
-  slug: 'rn-shopify-storefront',
+  slug: 'aisle',
   scheme: 'storefront',
   version: '1.0.0',
   orientation: 'portrait',
@@ -15,10 +15,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   userInterfaceStyle: 'light',
   ios: {
     supportsTablet: false,
-    bundleIdentifier: `dev.storefront.${merchant.bundleSuffix}`,
+    bundleIdentifier: `app.aisle.${merchant.bundleSuffix}`,
   },
   android: {
-    package: `dev.storefront.${merchant.bundleSuffix}`,
+    package: `app.aisle.${merchant.bundleSuffix}`,
     adaptiveIcon: {
       backgroundColor: merchant.theme.background,
       foregroundImage: './assets/android-icon-foreground.png',

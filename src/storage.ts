@@ -10,7 +10,7 @@ type SecureSchema = {
 
 // Each merchant build has its own bundle id, so the app sandbox already keeps
 // carts and sessions apart between merchants.
-export const localStore = new MMKVStorageAdapter<LocalSchema>('storefront.local');
+export const localStore = new MMKVStorageAdapter<LocalSchema>('aisle.local');
 
 // Keychain on iOS, Keystore-backed encryption on Android. Tokens never touch MMKV.
 export const secureStore = new SecureStorageAdapter<SecureSchema>();
