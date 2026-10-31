@@ -61,7 +61,8 @@ export function CartScreen() {
             />
           )}
         />
-        <SafeAreaView edges={['bottom']} style={styles.summary}>
+        {/* The tab bar already clears the home indicator, so no bottom inset here. */}
+        <View style={styles.summary}>
           <View style={styles.summaryRow}>
             <Text style={styles.summaryLabel}>Subtotal</Text>
             <Text style={styles.summaryValue}>{formatMoney(cart.cost.subtotalAmount)}</Text>
@@ -72,7 +73,7 @@ export function CartScreen() {
             disabled={busy}
             onPress={() => checkout.present(cart.checkoutUrl)}
           />
-        </SafeAreaView>
+        </View>
       </>
     );
   }
